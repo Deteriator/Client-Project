@@ -231,6 +231,7 @@ header {
 .employee-photos img {
   height: 460px;
   width: 600px;
+  border-radius: 10px;
 }
 
 .employee-captions {
@@ -264,15 +265,48 @@ header {
 }
 
 .photo-gallery {
+  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: space-around;
 }
 
-.photo-gallery-row1 {
+.photo-gallery h1 {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 60px;
+  padding-top: 10px;
+}
+
+.photo-gallery img {
+  height: 208px;
+  width: 208px;
+  border-radius: 250px;
+  margin-bottom: 20px;
+}
+
+.photo-gallery-row {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+
+.photo-gallery-captions {
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  padding-right: 10px;
+}
+
+.photo-gallery-captions h4 {
+  margin: 0;
+}
+
+.photo-gallery-captions p {
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 50px;
 }
 
 i.fab {
