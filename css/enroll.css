@@ -1,0 +1,355 @@
+/* Test spreadsheet for website adjustments */
+a {
+  color: #000;
+}
+body{
+  margin:0px;
+  background-color:#fffdd0;
+  font-family: Open Sans, 'Roboto', 'Helvetica', Sans-Serif;
+}
+/* header */
+header{
+  grid-area:header;
+  width:100%;
+  padding-top:15px;
+  padding-bottom:15px;
+}
+.header {
+  background-color: #fff;
+  box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+  position: fixed;
+  width: 100%;
+  top:0px;
+  z-index: 3;
+}
+.header-img{
+    margin-top:5px;
+    height:40px;
+    width:250px;
+    margin-left:10px;
+}
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.header li a {
+  display: block;
+  padding: 20px 20px;
+  border-right: 1px solid #f4f4f4;
+  text-decoration: none;
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+  background-color: #d72391;
+}
+
+.header .logo {
+  display: block;
+  float: left;
+  font-size: 2em;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+/* menu */
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+/* menu icon */
+
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -5px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 280px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+/* 48em = 768px */
+
+@media (min-width: 48em) {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 20px 30px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
+
+/* Grid Setup */
+.grid{
+  width:100%;
+  display:grid;
+  grid-template-rows:1fr auto;
+  grid-template-columns:1fr 1fr 1fr 1fr;
+  grid-template-areas: 
+  "header header header header "
+  "type type type type "
+  "info info info info "
+  "form form form form "
+  "footer footer footer footer "
+  "bfooter bfooter bfooter bfooter ";
+}
+/* Section calls */
+
+.type{
+  margin-top:87px;
+  position:relative;
+  grid-area:type;
+  height:200px;
+  background-color:#fff;
+  color:black;
+  display:flex;
+  align-content:center;
+  justify-content:center;
+  background-color:#fff;
+  padding-left:9%;
+  padding-right:9%;
+}
+span{
+  color:#d72391;
+}
+.content{
+  grid-area:info;
+  display:flex;
+  align-items:center;
+  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url("../images/Marlania.jpg");
+  background-size:cover;
+  height:450px;
+  color:#fff;
+  font-size: 1.35714286em;
+  line-height: 1.68421053em;
+}
+.content article{
+  margin-left:20px;
+  font-size:17px;
+}
+.enroll{
+  grid-area:form;
+  justify-content:center;
+  display:flex;
+  padding-top:60px;
+  height:600px;
+  background-color:#fff;
+  overflow:scroll;
+}
+footer{
+  grid-area:footer;
+  height:300px;
+  color:#fff;
+  background-color:#252525;
+  font-size:12px;
+  padding-left:5%;
+  padding-right:5%;
+  padding-bottom:3%;
+}
+  footer article h2{
+    color:#fff;
+  }
+
+.bottom-footer {
+  grid-area:bfooter;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #181818;
+  height: 60px;
+  padding-top: 5px;
+}
+.icon-list{
+  display:flex;
+  flex-direction:row;
+  justify-content:space-around;
+}
+.icon-list li{
+  margin-right:15px;
+}
+
+/* element changes */
+h2{
+      font-family: Roboto Slab, 'Helvetica', 'Arial', sans-serif;
+      color: #252525;
+      font-weight: 300;
+}
+span{
+  color:#d72391;
+}
+.fab {
+  color: #a2a2a2;
+}
+
+.footerCopyright {
+  padding-left: 15px;
+}
+li{
+  list-style: none;
+}
+
+/* Screen Larger than Phone */
+@media only screen and (min-width: 768px){
+    .content{
+        display:flex;
+        align-items:center;
+        background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url("../images/Marlania.jpg");
+        background-size:cover;
+        height:450px;
+        color:#fff;
+        font-size: 1.35714286em;
+        line-height: 1.68421053em;
+    }
+    header{
+      grid-area:header;
+      padding-top:25px;
+      padding-bottom:25px;
+    }
+    .header-img{
+      margin-top:5px;
+      height:40px;
+      width:250px;
+      margin-left:10px;
+  }
+  .header li a:hover,
+  .header .menu-btn:hover {
+    background-color: #f4f4f4;
+  }
+  
+    .content p{
+        display:flex;
+        flex-direction:row;
+        width:65%;
+        z-index: 2;
+        font-weight: 400;
+    }
+    .content article{
+      display:flex;
+      flex-direction:column;
+      margin-left: 15%;
+      margin-top:10%;
+      margin-bottom:10%;
+      font-size:21px;
+    }
+    .content h1{
+      margin-bottom:0px;
+    }
+    .type{
+      margin-top:100px;
+    }
+    .type h2{
+        font-size: 1.78571429em;
+        line-height: 1.5em;
+        color: #252525;
+        font-weight: 300;
+    }
+    a {
+      text-decoration: none;
+    }
+    footer{
+        display:flex;
+        flex-direction:row;
+        height:270px;
+        background-color:#252525;
+        width: 100%;
+        font-size:16px;
+        padding-left:0px;
+        padding-right:0px;
+    }
+    footer article{
+        color:#fff;
+        font-weight: 400;
+        flex-direction:column;
+        width:25%;
+        line-height: 1.6;
+        margin-left:5%;
+        margin-right:5%;
+    }
+    footer article h2{
+      color:#fff;
+    }
+    footer h2 {
+      margin: 0;
+    }
+    
+    footer p {
+      margin: 0;
+      flex-direction: column;
+    }
+    .footerCopyright {
+    padding-left: 100px;
+  }
+  .bottom-footer{
+    padding-bottom: 0;
+  }
+}
