@@ -147,6 +147,7 @@ header{
   .header .menu-icon {
     display: none;
   }
+  
 }
 
 /* Grid Setup */
@@ -325,6 +326,7 @@ li{
         font-size:16px;
         padding-left:0px;
         padding-right:0px;
+        padding-top: 20px;
     }
     footer article{
         color:#fff;
